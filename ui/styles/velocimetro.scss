@@ -1,0 +1,82 @@
+@import "mixins";
+
+.velocimetro {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 400px;
+    width: 400px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid rgb(184, 182, 182); 
+    
+    h1 {
+        top: 20%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 3%;
+        width: 3%;
+        position: absolute;
+        margin: auto;
+        color: rgb(139, 135, 135);        
+    } 
+    .velocidad1 {     
+        //@mixin velocidades($puntoDeRotacion, $altura, $derecha) 
+        @include velocidades(90deg, -4%, 90%);  
+    }
+    .velocidad2 {
+        //@mixin velocidades($puntoDeRotacion, $altura, $derecha)
+        @include velocidades(0deg, -90%, 0%);  
+    }
+    .velocidad3 {
+        //@mixin velocidades($puntoDeRotacion, $altura, $derecha)
+        @include velocidades(-90deg, -4%, -90%);  
+    }
+    .velocidad4 {
+        //@mixin velocidades($puntoDeRotacion, $altura, $derecha)
+        @include velocidades(-35deg, 65%, -55%);  
+    }
+    .velocidad5 {
+        //@mixin velocidades($puntoDeRotacion, $altura, $derecha)
+        @include velocidades(35deg, 65%, 55%);  
+    }
+    .velocidad6 {
+        //@mixin velocidades($puntoDeRotacion, $altura, $derecha)
+        @include velocidades(-45deg, -65%, 55%);  
+    }
+    .velocidad7 {
+        //@mixin velocidades($puntoDeRotacion, $altura, $derecha)
+        @include velocidades(45deg, -65%, -55%);  
+    }
+    //.aguja {
+    //    // 0 rpm = -140deg, max velocidad es 140deg
+    //    //@mixin aguja($velocidad)
+    //    @include aguja(-140deg);
+    //}
+    .circuloInterno{
+        @include circuloInterno;
+    }
+
+}
+.aumentaVelocidad {
+    display: left;
+    width: 50px;
+    height: 20px;
+    margin: 1% auto;
+    background-color: rgb(76, 223, 96);
+}
+.bajarVelocidad {
+    display: left;
+    width: 50px;
+    height: 20px;
+    margin: 1% auto;
+    background-color: rgb(223, 76, 76);
+}
+
+
+
+

@@ -1,0 +1,43 @@
+@mixin velocidades($puntoDeRotacion, $altura, $derecha) {
+    position: absolute;
+    height: 3%;
+    width: 1%;
+    margin: auto;
+    top: $altura;
+    left: 0;
+    bottom: 0;
+    right: $derecha;
+    border-radius: 1px;
+    background-color: rgb(172, 188, 199);
+    transform-origin: bottom;
+    transform: rotate($puntoDeRotacion);
+}
+
+//@mixin aguja($velocidad){
+//    position: absolute;
+//    height: 120px;
+//    width: 2px;
+//    margin: auto;
+//    top: -30%;
+//    left: 0;
+//    bottom: 0;
+//    right: 0;
+//    border-radius: 4px;
+//    background-color: #507D9C;
+//    transform-origin: bottom;
+//    transform: rotate($velocidad);
+//}
+
+@mixin circuloInterno(){
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 150px;
+    width: 150px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid rgb(184, 182, 182); 
+}
