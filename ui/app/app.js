@@ -28,7 +28,7 @@ class Velocimetro extends React.Component {
             //'borderRadius': '4px',
             //'backgroundColor': 'rgb(172, 188, 199)',
             'transformOrigin': 'bottom',
-            transform: 'rotate( '+this.state.degradianes+'deg)'
+            transform: 'rotate( '+this.state.velocidad-+'-143deg)'
         }
         return(
             <div className="velocimetro">
@@ -53,8 +53,8 @@ class Velocimetro extends React.Component {
         this.setState({
            // top: this.state.top-2,
             velocidad: this.state.velocidad+5,
-            degradianes: this.state.degradianes+5,
-            transform: 'rotate('+ this.state.degradianes +'deg)'            
+            //degradianes: this.state.degradianes+5,
+            //transform: 'rotate('+ this.state.degradianes +'deg)'            
         });
         //console.log('after: ' + this.state.transform);        
     }
@@ -63,8 +63,8 @@ class Velocimetro extends React.Component {
         this.setState({
             //top: this.state.top+2,
             velocidad: this.state.velocidad-5,
-            degradianes: this.state.degradianes-5,
-            transform: 'rotate('+ this.state.degradianes +'deg)'           
+            //degradianes: this.state.degradianes-5,
+            //transform: 'rotate('+ this.state.degradianes +'deg)'           
         });
         //console.log('after: ' + this.state.transform);        
     }
