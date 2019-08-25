@@ -6,9 +6,7 @@ class Velocimetro extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            top: 0,
-            degradianes: -143,
-            velocidad: 0       
+            velocidad: -143       
         }
     }
 
@@ -18,7 +16,7 @@ class Velocimetro extends React.Component {
             height: '0%',
             width: '0%',
             margin: 'auto',
-            top: ''+this.state.top+'',
+            top: '0',
             left: '0',
             bottom: '38%',
             right: '0',
@@ -28,7 +26,7 @@ class Velocimetro extends React.Component {
             //'borderRadius': '4px',
             //'backgroundColor': 'rgb(172, 188, 199)',
             'transformOrigin': 'bottom',
-            transform: 'rotate( '+this.state.velocidad-+'-143deg)'
+            transform: 'rotate( '+this.state.velocidad+'deg)'
         }
         return(
             <div className="velocimetro">
@@ -39,22 +37,25 @@ class Velocimetro extends React.Component {
                 <div className="velocidad5"></div>
                 <div className="velocidad6"></div>
                 <div className="velocidad7"></div>               
-                <h1 className="valorVelocidad">{this.state.velocidad}</h1> 
-                <div><button className="aumentaVelocidad" onClick={this.subir.bind(this)}>+</button></div>
-                <div><button className="bajarVelocidad" onClick={this.bajar.bind(this)}>-</button></div>
+                <h1 className="valorVelocidad">{this.state.velocidad+143}</h1> 
                 <div className="circuloInterno"></div>
                 <div style={style}></div>
             </div>
         )
     }
 
+    /*
+    <div><button className="aumentaVelocidad" onClick={this.subir.bind(this)}>+</button></div>
+                <div><button className="bajarVelocidad" onClick={this.bajar.bind(this)}>-</button></div>
+                
+    
     subir() {
         //console.log('before: ' + this.state.transform);
         this.setState({
            // top: this.state.top-2,
             velocidad: this.state.velocidad+5,
-            //degradianes: this.state.degradianes+5,
-            //transform: 'rotate('+ this.state.degradianes +'deg)'            
+            degradianes: this.state.degradianes+5,
+            transform: 'rotate('+ this.state.degradianes +'deg)'            
         });
         //console.log('after: ' + this.state.transform);        
     }
@@ -63,34 +64,31 @@ class Velocimetro extends React.Component {
         this.setState({
             //top: this.state.top+2,
             velocidad: this.state.velocidad-5,
-            //degradianes: this.state.degradianes-5,
-            //transform: 'rotate('+ this.state.degradianes +'deg)'           
+            degradianes: this.state.degradianes-5,
+            transform: 'rotate('+ this.state.degradianes +'deg)'           
         });
         //console.log('after: ' + this.state.transform);        
-    }
+    }*/
 }
 
 class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            top: 0,
-            degradianes: -143,
-            velocidad: 0       
+            velocidad: -143       
         }
     }
     componentDidMount() {
         this.velocidad = setInterval(
-        () =>  this.setState({
-            velocidad: this.state.velocidad + 1})
-            ,
-            1000          
+            () =>  this.setState({
+                velocidad: this.state.velocidad + 1})
+                ,
+                1000          
         )
       }
-
     render() {
         return(
-            <Velocimetro velocidad = {this.state.velocidad} />
+            <Velocimetro velocidad = {this.props.velocidad} />
         )
     }
 }
