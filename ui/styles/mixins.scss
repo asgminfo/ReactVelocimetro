@@ -11,6 +11,7 @@
     background-color: rgb(172, 188, 199);
     transform-origin: bottom;
     transform: rotate($puntoDeRotacion);
+
 }
 
 //@mixin aguja($velocidad){
@@ -35,8 +36,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: 150px;
-    width: 150px;
+    height: 45%;
+    width: 45%;
     background-color: transparent;
     border-radius: 50%;
     border: 2px solid rgb(184, 182, 182); 

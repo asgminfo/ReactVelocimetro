@@ -3,8 +3,8 @@
 .velocimetro {
     position: absolute;
     margin: auto;
-    top: 0;
-    left: 0;
+    //top: 0;
+    //left: 0;
     right: 0;
     bottom: 0;
     height: 400px;
@@ -60,8 +60,16 @@
     .circuloInterno{
         @include circuloInterno;
     }
-
+    .valorVelocidad{
+        font-style: oblique;
+        &::after{
+            content: "mph";
+            color: rgb(172, 188, 199);
+            font-size: 50%;
+        }
+    }
 }
+
 .aumentaVelocidad {
     display: left;
     width: 50px;
